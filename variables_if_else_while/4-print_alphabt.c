@@ -10,12 +10,10 @@ int main(void)
 {
 	char lower_alphabet = 'a';
 
-	if (lower_alphabet != 'q' && lower_alphabet != 'e')
+	while (lower_alphabet <= 'z')
 	{
-
-		while (lower_alphabet <= 'z')
+		if (lower_alphabet != 'q' && lower_alphabet != 'e')
 		{
-
 			putchar(lower_alphabet);
 			lower_alphabet++;
 		}
