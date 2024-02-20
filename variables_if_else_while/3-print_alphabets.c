@@ -10,13 +10,16 @@ int main(void)
 	char lower_alphabet = 'a';
 	char upper_alphabet = 'A';
 
-	while (lower_alphabet <= 'z' && upper_alphabet <= 'Z')
+	while (lower_alphabet <= 'z')
 	{
 
 		putchar(lower_alphabet);
-		putchar(upper_alphabet);
-
 		lower_alphabet++;
+	}
+	while (upper_alphabet <= 'Z')
+	{
+
+		putchar(upper_alphabet);
 		upper_alphabet++;
 	}
 
