@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  * main - The entry point
- * Description: Prints all possible combinations of 
+ * Description: Prints all possible combinations of
  *              single-digit numbers.
  *              Numbers must be separated by ,, followed by a space
  *              Numbers should be printed in ascending order
