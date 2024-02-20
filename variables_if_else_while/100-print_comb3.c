@@ -22,14 +22,11 @@ int main(void)
 
 		for (j = 0; j <= 9; j++)
 		{
-			if (i == j)
+			if ((i != j) && (i < j))
 			{
-			break;
+				putchar('0' + i);
+				putchar('0' + j);
 			}
-
-			putchar('0' + i);
-			putchar('0' + j);
-
 			if (i < 9)
 			{
 			putchar(',');
