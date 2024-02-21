@@ -10,4 +10,5 @@ int main(void)
 		_putchar(array[i]);
 		i++;
 	}
+	return (0);
 }
