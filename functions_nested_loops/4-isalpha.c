@@ -18,6 +18,7 @@ int _isalpha(int c)
 			count++;
 			break;
 		}
+	}
 
 	for (i = 'A'; i <= 'Z'; i++)
 	{
@@ -26,6 +27,7 @@ int _isalpha(int c)
 			count++;
 			break;
 		}
+	}
 
 	if (count > 0)
 	{
@@ -35,5 +37,4 @@ int _isalpha(int c)
 	{
 		return (0);
 	}
-
 }
