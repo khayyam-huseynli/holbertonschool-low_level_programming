@@ -12,19 +12,27 @@
 int _islower(int c)
 {
 	int i;
+	int count = 0;
 	char letters[] = "abcdefghijklmnopqrstuvwxyz";
 
 	for (i =  0; i < 26; i++)
 	{
 
-		if (c == letters[i])
+		if (c + '0'  == letters[i])
 		{
-			return (1);
-		}
-		else
-		{
-			return (0);
+			count++;
 		}
 
 	}
+
+	if (count > 0)
+	{
+		return (1);
+	}
+
+	else
+	{
+		return (0);
+	}
+
 }
