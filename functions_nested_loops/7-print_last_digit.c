@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_last_digit - Function that prints the last digit of a number
+ * print_last_digit - Function that returns the last digit of a number
  * @n: number nuber to be checked
  * Return: Always returns 0
  */
@@ -18,7 +18,5 @@ int print_last_digit(int n)
 		mod = mod * -1;
 	}
 
-	_putchar(mod);
-
-	return (0);
+	return (mod);
 }
