@@ -24,6 +24,7 @@ int print_last_digit(int n)
 	}
 
 	_putchar(mod);
+	_putchar(mod);
 
 	return (0);
 }
