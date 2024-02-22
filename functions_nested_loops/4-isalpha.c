@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _islower - Function that checks for lowercase character
+ * _isalpha - Function that checks for lowercase character
  *
  * @c: The character to be checked
  *
@@ -9,7 +9,7 @@
  *
  */
 
-int _islower(int c)
+int _isalpha(int c)
 {
 	int i;
 	int count = 0;
@@ -20,7 +20,7 @@ int _islower(int c)
 	while (lower_alphabet <= 'z')
 	{
 
-		putchar(lower_alphabet);
+		_putchar(lower_alphabet);
 		lower_alphabet++;
 		count++;
 	}
@@ -28,7 +28,7 @@ int _islower(int c)
 	while (upper_alphabet <= 'Z')
 	{
 
-		putchar(upper_alphabet);
+		_putchar(upper_alphabet);
 		upper_alphabet++;
 		count++;
 	}
