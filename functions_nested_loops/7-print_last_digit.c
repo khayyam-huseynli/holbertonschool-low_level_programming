@@ -15,15 +15,9 @@ int print_last_digit(int n)
 
 	if (mod < 0)
 	{
-		return (mod * -1);
+		mod = mod * -1;
 	}
 
-	else
-	{
-		return (mod);
-	}
-
-	_putchar(mod);
 	_putchar(mod);
 
 	return (0);
