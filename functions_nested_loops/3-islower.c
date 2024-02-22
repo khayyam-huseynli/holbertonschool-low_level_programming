@@ -18,7 +18,7 @@ int _islower(int c)
 	for (i =  0; i < 26; i++)
 	{
 
-		if (c + '0'  == letters[i])
+		if (c  == letters[i])
 		{
 			count++;
 		}
