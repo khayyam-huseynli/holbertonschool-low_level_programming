@@ -14,8 +14,13 @@ void jack_bauer(void)
 
 	for (i =  0; i < 3; i++)
 	{
-		for (j =  0; j < 4; j++)
+		for (j =  0; j < 10; j++)
 		{
+			if (i == 2 && j >= 3)
+			{
+				continue;
+			}
+
 			for (m = 0; m < 6; m++)
 			{
 				for (n = 0; n < 10; n++)
