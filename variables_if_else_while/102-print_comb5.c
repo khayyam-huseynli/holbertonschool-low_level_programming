@@ -35,21 +35,22 @@ int main(void)
 					{
 						putchar('0' + i);
 						putchar('0' + j);
+						putchar(' ');
 						putchar('0' + m);
 						putchar('0' + n);
 					}
 
 					if (i != 9 && j != 8 && m != 9 && n != 9)
 					{
+
 						putchar(',');
 						putchar(' ');
 					}
-
 				}
-
 			}
 		}
 	}
+
 	putchar('\n');
 
 	return (0);
