@@ -38,13 +38,12 @@ int main(void)
 						putchar(' ');
 						putchar('0' + m);
 						putchar('0' + n);
-					}
 
-					if (i != 9 || j != 8 || m != 9 || n != 9)
-					{
-
-						putchar(',');
-						putchar(' ');
+						if (i != 9 || j != 8 || m != 9 || n != 9)
+						{
+							putchar(',');
+							putchar(' ');
+						}
 					}
 				}
 			}
