@@ -8,16 +8,16 @@
 int main(void)
 {
 	int i;
-	long int f1 = 1;
-	long int f2 = 2;
-	long int fnext = f1 + f2;
+	unsigned long f1 = 1;
+	unsigned long f2 = 2;
+	unsigned long fnext = f1 + f2;
 
-	printf("%ld, %ld, ", f1, f2);
+	printf("%ul, %ul, ", f1, f2);
 
 	for (i = 3; i <= 98; i++)
 	{
 
-		printf("%ld", fnext);
+		printf("%ul", fnext);
 
 		if (i < 98)
 		{
