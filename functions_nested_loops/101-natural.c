@@ -40,5 +40,5 @@ void natural(int n)
 		i++;
 	}
 
-	printf("%d\n ", sum);
+	printf("%d\n", sum);
 }
