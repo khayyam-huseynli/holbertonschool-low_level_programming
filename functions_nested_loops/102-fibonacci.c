@@ -21,14 +21,17 @@ int main(void)
 void fibonacci(int n)
 {
 	int i;
-	int fibbo[n];
+	int f1;
+	int f2;
+	int fnext;
 
-	fibbo[0] = 1;
-	fibbo[1] = 2;
+	printf("%d, %d, ", f1, f2);
 
-	for (i = 0; i < n - 2; i++)
+	for (i = 3; i <= n; i++)
 	{
-		fibbo[i + 2] = fibbo[i + 1] + fibbo[i];
-		printf("%d, ", fibbo[i]);
+		printf("%d, ", fnext);
+		f1 = f2;
+		f2 = fnext;
+		fnext = f1 + f2;
 	}
 }
