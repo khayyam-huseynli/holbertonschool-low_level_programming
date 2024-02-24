@@ -21,9 +21,9 @@ int main(void)
 void fibonacci(int n)
 {
 	int i;
-	int f1;
-	int f2;
-	int fnext;
+	int f1 = 1;
+	int f2 = 2;
+	int fnext = f1 + f2;
 
 	printf("%d, %d, ", f1, f2);
 
