@@ -12,12 +12,12 @@ int main(void)
 	unsigned long f2 = 2;
 	unsigned long fnext = f1 + f2;
 
-	printf("%ul, %ul, ", f1, f2);
+	printf("%lu, %lu, ", f1, f2);
 
 	for (i = 3; i <= 98; i++)
 	{
 
-		printf("%ul", fnext);
+		printf("%lu", fnext);
 
 		if (i < 98)
 		{
