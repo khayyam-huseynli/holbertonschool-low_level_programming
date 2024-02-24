@@ -21,8 +21,7 @@ int main(void)
 void fibonacci(int n)
 {
 	int i;
-	const int s = n;
-	char fibbo[s];
+	int fibbo[n];
 
 	fibbo[0] = 1;
 	fibbo[1] = 2;
