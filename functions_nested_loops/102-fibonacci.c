@@ -21,6 +21,8 @@ int main(void)
 void fibonacci(int n)
 {
 	int i;
+	char comma = ',';
+	char space = ' ';
 	long int f1 = 1;
 	long int f2 = 2;
 	long int fnext = f1 + f2;
@@ -34,8 +36,8 @@ void fibonacci(int n)
 
 		if (i != n)
 		{
-			_putchar(',');
-			_putchar(' ');
+			printf("%c", comma);
+			printf("%c", space);
 		}
 
 		f1 = f2;
