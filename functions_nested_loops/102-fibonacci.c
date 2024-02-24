@@ -21,23 +21,26 @@ int main(void)
 void fibonacci(int n)
 {
 	int i;
-	unsigned int f1 = 1;
-	unsigned int f2 = 2;
-	unsigned int fnext = f1 + f2;
+	long int f1 = 1;
+	long int f2 = 2;
+	long int fnext = f1 + f2;
 
 	printf("%d, %d, ", f1, f2);
 
 	for (i = 3; i <= n; i++)
 	{
+
 		printf("%d", fnext);
-		f1 = f2;
-		f2 = fnext;
-		fnext = f1 + f2;
+
 		if (i != n)
 		{
 			_putchar(',');
 			_putchar(' ');
 		}
+
+		f1 = f2;
+		f2 = fnext;
+		fnext = f1 + f2;
 	}
 	_putchar('\n');
 }
