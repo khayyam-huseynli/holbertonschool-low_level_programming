@@ -31,7 +31,7 @@ int main(void)
 			{
 				for (n = 0; n <= 9; n++)
 				{
-					if ((i + j) <= (m + n) && i != j)
+					if ((i + j) <= (m + n) && i > m)
 					{
 						putchar('0' + i);
 						putchar('0' + j);
