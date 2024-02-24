@@ -10,7 +10,7 @@
 void fibonacci(int n)
 {
 	int i;
-	char fibbo[];
+	char fibbo[n];
 
 	fibbo[0] = 1;
 	fibbo[1] = 2;
