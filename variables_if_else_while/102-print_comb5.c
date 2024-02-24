@@ -1,52 +1,30 @@
 #include <stdio.h>
-/**
- * main - The entry point
- *
- * Description: Prints all possible combinations of two two-digit numbers
- *              The numbers should range from 0 to 99
- *              The two numbers should be separated by a space
- *              All numbers should be printed with two digits.
- *               1 should be printed as 01
- *              The combination of numbers must be separated by comma,
- *              followed by a space
- *              00 01 and 01 00 are considered as the same combination
- *              of the numbers 0 and 1
- *
- * Return: Always (0) when Successfull
- */
 
+/**
+ * main - Prints all possible combinations of two two-digit numbers,
+ *        ranging from 0-99, separated by a comma followed by a space.
+ *
+ * Return: Always 0.
+ */
 int main(void)
 {
-	int i;
-	int j;
-	int m;
-	int n;
+	int num1, num2;
 
-	for (i = 0; i <= 9; i++)
+	for (num1 = 0; num1 <= 98; num1++)
 	{
-
-		for (j = 0; j <= 9; j++)
+		for (num2 = num1 + 1; num2 <= 99; num2++)
 		{
-			for (m = 0; m <= 9; m++)
-			{
-				for (n = 0; n <= 9; n++)
-				{
-					if ((i + j) < (m + n) || i < m)
-					{
-						putchar('0' + i);
-						putchar('0' + j);
-						putchar(' ');
-						putchar('0' + m);
-						putchar('0' + n);
+			putchar((num1 / 10) + '0');
+			putchar((num1 % 10) + '0');
+			putchar(' ');
+			putchar((num2 / 10) + '0');
+			putchar((num2 % 10) + '0');
 
-						if (i != 9 || j != 8 || m != 9 || n != 9)
-						{
-							putchar(',');
-							putchar(' ');
-						}
-					}
-				}
-			}
+			if (num1 == 98 && num2 == 99)
+				continue;
+
+			putchar(',');
+			putchar(' ');
 		}
 	}
 
