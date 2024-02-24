@@ -25,12 +25,12 @@ void fibonacci(int n)
 	long int f2 = 2;
 	long int fnext = f1 + f2;
 
-	printf("%d, %d, ", f1, f2);
+	printf("%ld, %ld, ", f1, f2);
 
 	for (i = 3; i <= n; i++)
 	{
 
-		printf("%d", fnext);
+		printf("%ld", fnext);
 
 		if (i != n)
 		{
