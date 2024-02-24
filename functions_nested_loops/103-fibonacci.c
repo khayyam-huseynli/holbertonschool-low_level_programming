@@ -10,7 +10,7 @@ int main(void)
 	long int f1 = 1;
 	long int f2 = 2;
 	long int fnext = f1 + f2;
-	long long int sum = 2;
+	long int sum = 2;
 
 	while (fnext <= 4000000)
 	{
@@ -24,6 +24,6 @@ int main(void)
 		}
 	}
 
-	printf("%lli\n", sum);
+	printf("%li\n", sum);
 	return (0);
 }
