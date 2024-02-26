@@ -4,9 +4,9 @@
  * print_square  -   Function that prints a square, followed by a new line
  *                   The diogonal should end with a \n
  *                   If n is 0 or less, the function should only print \n
- *                   If size is 0 or less, the function should print only a new line
+ *                   If size is 0 or less, the function prints only a new line
  *                   Use the character # to print the square
- * @n: is the is the size of the square
+ * @size: is the is the size of the square
  */
 
 void print_square(int size)
