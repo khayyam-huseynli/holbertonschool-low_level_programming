@@ -16,10 +16,18 @@ void print_rev(char *s)
 		i++;
 	}
 
-	while (i > 0)
+	/** after while loop i = strlen + 1 */
+
+	char *start = *s; /* points 1st character */
+	char *end = *s + i; /* points last character */
+
+	while (start < end)
 	{
-		_putchar(s[i - 1]);
-		i--;
+		char temp = *start;
+		*start = *end;
+		*end = temp;
+		start++;
+		end--;
 	}
 
 	_putchar('\n');
