@@ -9,8 +9,8 @@ void rev_string(char *s)
 {
 
 	int i = 0;
-	char *start = s; /* points 1st character */
-	char *end = s + i - 2; /* points last character */
+	char *start; /* points 1st character */
+	char *end; /* points last character */
 
 	while (s[i] != '\0')
 	{
@@ -19,6 +19,8 @@ void rev_string(char *s)
 
 	/** after while loop i = strlen + 1 */
 
+	*start = s;
+	*end = s + i -1;
 
 	while (start < end)
 	{
