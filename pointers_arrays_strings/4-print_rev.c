@@ -1,12 +1,11 @@
 #include "main.h"
 
 /**
- * print_rev - function that prints a string, in reverse,
- *             followed by a new line.
+ * rev_string - function that reverses a string
  * @s: string to be reversed
  */
 
-void print_rev(char *s)
+void rev_string(char *s)
 {
 
 	int i = 0;
@@ -16,17 +15,11 @@ void print_rev(char *s)
 		i++;
 	}
 
-	/** after while loop i = strlen + 1 */
-
-	char *start = *s; /* points 1st character */
-	char *end = *s + i - ; /* points last character */
-
-	while (start < end)
+	while (i > 0)
 	{
-		char temp = *start;
-		*start = *end;
-		*end = temp;
-		start++;
-		end--;
+		_putchar(s[i - 1]);
+		i--;
 	}
+
+	_putchar('\n');
 }
