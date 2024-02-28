@@ -19,7 +19,7 @@ void print_rev(char *s)
 	/** after while loop i = strlen + 1 */
 
 	char *start = *s; /* points 1st character */
-	char *end = *s + i; /* points last character */
+	char *end = *s + i - ; /* points last character */
 
 	while (start < end)
 	{
@@ -29,6 +29,4 @@ void print_rev(char *s)
 		start++;
 		end--;
 	}
-
-	_putchar('\n');
 }
