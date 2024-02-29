@@ -15,7 +15,7 @@ char *_strcpy(char *dest, char *src)
 
 	int i = 0;
 	int j = 0;
-	char *ptr_dest; /* points to destination array */
+	/*char *ptr_dest;  points to destination array */
 
 	while (src[i] != '\0')
 	{
@@ -29,7 +29,7 @@ char *_strcpy(char *dest, char *src)
 		dest[j] = src[j];
 	}
 
-	ptr_dest = dest;
+	/*ptr_dest = dest;*/
 
-	return (ptr_dest);
+	return (dest);
 }
