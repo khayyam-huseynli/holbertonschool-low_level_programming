@@ -10,23 +10,15 @@
 void reverse_array(int *a, int n)
 {
 
-	int i = 0;
-	char *start; /* points 1st character */
-	char *end; /* points last character */
-
-	while (a[i] != '\0')
-	{
-		i++;
-	}
-
-	/** after while loop i = strlen + 1 */
+	int *start; /* points 1st character */
+	int *end; /* points last character */
 
 	start = a;
-	end = a + i - 1;
+	end = a + n - 1;
 
 	while (start < end)
 	{
-		char temp = *start;
+		int temp = *start;
 		*start = *end;
 		*end = temp;
 		start++;
