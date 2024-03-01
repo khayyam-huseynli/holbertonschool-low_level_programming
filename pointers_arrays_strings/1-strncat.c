@@ -25,9 +25,13 @@ char *_strncat(char *dest, char *src, int n)
 
 	/** after while loop j = strlen(dest) */
 
-	for (k = 0; k <= n; k++)
+	for (k = 0; k < n; k++)
 	{
 		dest[j + k] = src[k];
+		if (src[k] == '\0')
+		{
+			break;
+		}
 	}
 
 	return (dest);
