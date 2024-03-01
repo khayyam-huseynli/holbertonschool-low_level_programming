@@ -24,15 +24,7 @@ char *_strncpy(char *dest, char *src, int n)
 
 	while (j < n)
 	{
-		if (src[0] == '\0')
-		{
-			*(dest + i) = '\0';
-		}
-		else
-		{
-			*(dest + j) = *(src + j);
-		}
-
+		*(dest + j) = *(src + j);
 		j++;
 	}
 
