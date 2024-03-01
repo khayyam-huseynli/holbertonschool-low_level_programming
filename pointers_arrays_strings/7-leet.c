@@ -16,30 +16,25 @@
 char *leet(char *str)
 {
 	int i = 0;
+	char lets[][] = {{'a', 'A'}, {'e', 'E'}, {'o', 'O'},
+				{'t', 'T'}, {'l', 'L'}};
 
-	for (i = 0; str[i] != '\0'; i++)
+	int nums[] = {'4', '3', '0', '7', '1'};
+
+	while (str[i] != '\0')
 	{
-		if (str[i] == 'a' || str[i] == 'A')
+		while (lets[j] != '\0')
 		{
-			str[i] = '4';
-		}
-		else if (str[i] == 'e' || str[i] == 'E')
-		{
-			str[i] = '3';
-		}
-		else if (str[i] == 'o' || str[i] == 'O')
-		{
-			str[i] = '0';
-		}
-		else if (str[i] == 't' || str[i] == 'T')
-		{
-			str[i] = '7';
-		}
-		else if (str[i] == 'l' || str[i] == 'L')
-		{
-			str[i] = '1';
+			while (nums[k] != '\0')
+			{
+				if (str[i] == lets[j])
+				{
+					str[i] = nums[k];
+				}
+			}
 		}
 	}
+
 
 	return (str);
 }
