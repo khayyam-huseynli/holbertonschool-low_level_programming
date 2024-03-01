@@ -14,21 +14,28 @@ char *_strncpy(char *dest, char *src, int n)
 {
 
 	int l = 0;
+	int i = 0;
 
 	while (src[l] != '\0')
 	{
-
-		if (src[0] == '\0')
-		{
-			*(dest + l) = '\0';
-		}
-		else
-		{
-			*(dest + l) = *(src + l);
-		}
-		
 		l++; /* after while length of src */
 	}
+
+	while (i < n)
+	{
+		if (src[0] == '\0')
+		{
+			*(dest + i) = '\0';
+		}
+		else if (n <= l)
+		{
+			*(dest + i) = *(src + i);
+		}
+
+		i++;
+
+	}
+
 	if (l < n)
 	{
 		while (l < n)
