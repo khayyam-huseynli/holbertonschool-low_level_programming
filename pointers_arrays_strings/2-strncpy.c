@@ -36,12 +36,12 @@ char *_strncpy(char *dest, char *src, int n)
 
 	}
 
-	if (l < n)
+	if (n < l)
 	{
-		while (l < n)
+		while (n < l)
 		{
-			*(dest + l) = '\0';
-			l++;
+			*(dest + n) = '\0';
+			n++;
 		}
 	}
 
