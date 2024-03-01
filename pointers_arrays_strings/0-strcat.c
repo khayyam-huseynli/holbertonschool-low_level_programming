@@ -35,10 +35,8 @@ char *_strcat(char *dest, char *src)
 
 	for (k = 0; k <= i; k++)
 	{
-		dest[j + 1 + k] = src[k];
+		dest[j + k] = src[k];
 	}
-
-	/*ptr_dest = dest;*/
 
 	return (dest);
 }
