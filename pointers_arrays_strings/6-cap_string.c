@@ -19,13 +19,15 @@ char *cap_string(char *str)
 	char sep[] = {' ', '\n', '\t', ',', ';', '.',
 		'!', '?', '"', '(', ')', '{', '}'};
 
-	str[0] = str[0] - 32;
-
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		j = 0;
 		while (sep[j] != '\0')
 		{
+			if (str[0] >= 'A' && str[0] <= 'Z')
+			{
+				continue;
+			}
 			if (str[i] == sep[j] && (str[i + 1] >= 'a'
 					&& str[i + 1] <= 'z'))
 			{
