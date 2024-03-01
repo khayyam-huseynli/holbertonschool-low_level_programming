@@ -26,7 +26,7 @@ char *cap_string(char *str)
 		{
 			if (str[0] >= 'A' && str[0] <= 'Z')
 			{
-				continue;
+				break;
 			}
 			if (str[i] == sep[j] && (str[i + 1] >= 'a'
 					&& str[i + 1] <= 'z'))
