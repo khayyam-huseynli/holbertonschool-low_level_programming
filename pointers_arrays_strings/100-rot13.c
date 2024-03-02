@@ -20,10 +20,9 @@ char *rot13(char *str)
 			k = (str[i] - 'a' + k) % 26;
 			str[i] = 'a' + k;
 		}
-		else
-		{
-			str[i] = str[i] + k;
-		}
+		
+		str[i] = str[i] + k;
+		k = 13;
 	}
 
 	return (str);
