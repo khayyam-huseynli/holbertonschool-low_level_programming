@@ -11,22 +11,19 @@
 char *rot13(char *str)
 {
 	int i = 0;
+	int k = 13;
 
 	while (str[i] != '\0')
 	{
-		if ((str[i] >= 'a' && str[i] <= 'm') ||
-			(str[i] >= 'A' && str[i] <= 'M'))
+		if (str[i] + 'a' + k > 26)
 		{
-			str[i] = str[i] + 13;
+			k = (str[i] - 'a' + k) % 26;
+			str[i] = 'a' + k;
 		}
-		else if ((str[i] >= 'n' && str[i] <= 'z') ||
-			(str[i] >= 'N' && str[i] <= 'Z'))
+		else
 		{
-		{
-			str[i] = str[i] - 13;
+			str[i] = str[i] + k;
 		}
-
-		i++;
 	}
 
 	return (str);
