@@ -1,3 +1,16 @@
+/** @s: string to be reversed */
+void rev_string(char *s);
+
+/**
+ * infinite_add - Add up two numbers stored in given char arrays
+ * @n1: The first number
+ * @n2: The second number
+ * @r: Pointer to the buffer to store result
+ * @size_r: The size of the buffer
+ *
+ * Return: 0 if buffer too small to store result, else return pointer to buffer
+ */
+
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int l1, l2, rl, i, sum, num1, num2, carry;
@@ -36,8 +49,34 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		r[i] = carry + '0';
 		r[i + 1] = '\0';
 	}
-	start = r;
-	end = r + rl;
+	else
+		r[i] = '\0';
+	rev_string(r);
+	return (r);
+}
+
+/**
+ * rev_string - function that reverses a string
+ * @s: string to be reversed
+ */
+
+void rev_string(char *s)
+{
+
+	int i = 0;
+	char *start; /* points 1st character */
+	char *end; /* points last character */
+
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+
+	/** after while loop i = strlen + 1 */
+
+	start = s;
+	end = s + i - 1;
+
 	while (start < end)
 	{
 		char temp = *start;
@@ -46,5 +85,4 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		start++;
 		end--;
 	}
-	return (r);
 }
