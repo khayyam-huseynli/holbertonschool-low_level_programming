@@ -34,7 +34,11 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		k++;
 	}
 	r[k] = sum % 10 + '0';
-
+	if (k + 1 > size_r)
+	{
+		r = 0;
+	}
+	r[k + 1] = '\0';
 	start = r;
 	end = r + size_r - 1;
 	while (start < end)
