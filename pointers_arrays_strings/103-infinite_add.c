@@ -32,7 +32,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		r[k] = sum % 10 + '0';
 		sum = (sum - sum % 10) / 10;
 		k++;
-		if (k + 1 > size_r)
+		if (k + 2 > size_r)
 		{
 			return (0);
 		}
