@@ -11,7 +11,7 @@
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	long num1 = 0, num2 = 0, sum = 0;
+	unsigned int num1 = 0, num2 = 0, sum = 0;
 	int i = 0, j = 0, k = 0;
 	char *start; /* points 1st character */
 	char *end; /* points last character */
