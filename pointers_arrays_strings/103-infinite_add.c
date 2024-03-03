@@ -40,7 +40,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	}
 	r[k + 1] = '\0';
 	start = r;
-	end = r + size_r - 1;
+	end = r + k;
 	while (start < end)
 	{
 		char temp = *start;
