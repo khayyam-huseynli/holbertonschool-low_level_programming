@@ -12,9 +12,8 @@
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int num1 = 0, num2 = 0, sum = 0;
-	int i = 0, j = 0, k = 0;
-	char *start; /* points 1st character */
-	char *end; /* points last character */
+	int i = 0, j = 0, k = 0, m = 0;
+	char temp_r[1000];
 
 	while (n1[i] != '\0')
 	{
@@ -26,25 +25,23 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		num2 = num2 * 10 + n2[j] - '0';
 		j++;
 	}
+
 	if (i + 2 > size_r || j + 2 > size_r)
 		return (0);
 	sum = num1 + num2;
-	while (k <= i || k <= j)
+
+	while (k < i || k < j)
 	{
-		r[k] = sum % 10 + '0';
+		temp_r[k] = sum % 10 + '0';
 		sum = (sum - sum % 10) / 10;
 		k++;
 	}
-	r[k] = '\0';
-	start = r;
-	end = r + k - 1;
-	while (start < end)
+	temp_r[k] = '\0';
+
+	while (temp_r[m] != '\0')
 	{
-		char temp = *start;
-		*start = *end;
-		*end = temp;
-		start++;
-		end--;
+		r[m] = temp_r[k - m - 1];
+		m++;
 	}
 	return (r);
 }
