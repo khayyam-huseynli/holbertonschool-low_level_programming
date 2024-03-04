@@ -32,7 +32,7 @@ char *_strchr(char *s, char c)
 		s++;
 	}
 	if (count == 0)
-		return ('\0');
+		return (void*)0;
 	else
 		return (s);
 }
