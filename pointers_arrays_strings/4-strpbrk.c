@@ -32,5 +32,5 @@ char *_strpbrk(char *s, char *accept)
 		s++;
 		accept = temp;
 	}
-	return (s);
+	return (NULL);
 }
