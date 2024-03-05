@@ -17,7 +17,7 @@ char *_strpbrk(char *s, char *accept)
 	char *temp = accept;
 
 	if (*s == '\0' || *accept == '\0')
-		return (ptr);
+		return (NULL);
 
 	while (*s != ' ')
 	{
