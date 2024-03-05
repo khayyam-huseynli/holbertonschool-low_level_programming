@@ -19,7 +19,7 @@ char *_strpbrk(char *s, char *accept)
 	if (*s == '\0' || *accept == '\0')
 		return (NULL);
 
-	while (*s != ' ')
+	while (*s != '\0')
 	{
 		while (*accept)
 		{
