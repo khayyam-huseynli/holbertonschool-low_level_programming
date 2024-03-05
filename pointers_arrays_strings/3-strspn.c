@@ -15,16 +15,20 @@ unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int count = 0;
 
+	if (*s == '\0' || *accept == '\0')
+		return (0);
+
 	while (*s)
 	{
-		if (*s == c)
+		while (*accept)
 		{
-			count++;
+			if (*s == *accept)
+			{
+				count++;
+			}
+			accept++;
 		}
 		s++;
 	}
-	if (c == '\0')
-		return (++count);
-	else
-		return (count);
+	return (count);
 }
