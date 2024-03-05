@@ -14,21 +14,24 @@
 unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int count = 0;
+	char *temp = accept;
 
 	if (*s == '\0' || *accept == '\0')
 		return (0);
 
-	while (*s)
+	while (*s != ' ')
 	{
 		while (*accept)
 		{
 			if (*s == *accept)
 			{
 				count++;
+				break;
 			}
 			accept++;
 		}
 		s++;
+		accept = temp;
 	}
 	return (count);
 }
