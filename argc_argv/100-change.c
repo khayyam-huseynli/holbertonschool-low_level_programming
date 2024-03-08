@@ -25,29 +25,28 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
-	if (atoi(argv[1]) < 0)
+
+	if (argv[1][0] == '-')
 	{
-		printf("0\n");
+		printf("%d\n", 0);
 	}
 	else
 	{
 		cent = atoi(argv[1]);
-		
+
 		change += cent / 25;
 		cent = cent % 25;
-		
+
 		change += cent / 10;
 		cent = cent % 10;
-		  	
+
 		change += cent / 2;
 		cent = cent % 2;
 
 		if (cent > 0)
 			change++;
 
+		printf("%d\n", change);
 	}
-
-	printf("%d\n", change);
-
 	return (0);
 }
