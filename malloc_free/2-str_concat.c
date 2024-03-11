@@ -20,17 +20,15 @@ char *str_concat(char *s1, char *s2)
 	int i = 0, j = 0;
 	char *concat_str;
 
-	if (s1 == NULL || s2 == NULL)
-	{
+	if (s1 == NULL)
 		s1 = "";
+	if (s2 == NULL)
 		s2 = "";
-	}
 
 	while (s1[i] != '\0')
 	{
 		i++;
 	}
-
 	while (s2[j] != '\0')
 	{
 		j++;
@@ -47,7 +45,6 @@ char *str_concat(char *s1, char *s2)
 		concat_str++;
 		s1++;
 	}
-
 	while (*s2)
 	{
 		*concat_str = *s2;
@@ -55,5 +52,6 @@ char *str_concat(char *s1, char *s2)
 		s2++;
 	}
 	*concat_str = '\0';
+
 	return (concat_str - (i + j));
 }
