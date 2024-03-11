@@ -31,7 +31,7 @@ char *_strdup(char *str)
 
 	while (j < i)
 	{
-		*dup_str[j] =  *str[j];
+		dup_str[j] =  str[j];
 		j++;
 	}
 	return (dup_str);
