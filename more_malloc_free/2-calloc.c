@@ -30,7 +30,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	ptr = (unsigned char *)arr;
 
-	while (i < nmemb)
+	while (i < nmemb * size)
 	{
 		ptr[i] = 0;
 		i++;
