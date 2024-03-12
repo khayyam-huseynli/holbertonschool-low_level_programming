@@ -22,7 +22,7 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i = 0, j = 0;
+	unsigned int i = 0, j = 0, k = 0;
 	char *nconcat_str;
 
 	if (s1 == NULL)
@@ -49,11 +49,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		nconcat_str++;
 		s1++;
 	}
-	while (*s2)
+	while (k < j)
 	{
 		*nconcat_str = *s2;
 		nconcat_str++;
 		s2++;
+		k++;
 	}
 	*nconcat_str = '\0';
 
