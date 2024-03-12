@@ -32,5 +32,5 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		arr[i] = 0;
 		i++;
 	}
-	return (void *arr);
+	return ((void *)arr);
 }
