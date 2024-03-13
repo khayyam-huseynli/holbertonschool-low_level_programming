@@ -29,7 +29,7 @@ int *array_range(int min, int max)
 
 	while (i < max - min + 1)
 	{
-		arr[i] = i;
+		arr[i] = min + i;
 		i++;
 	}
 	return (arr);
