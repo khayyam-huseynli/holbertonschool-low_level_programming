@@ -13,7 +13,7 @@
 
 int word_count(char *str)
 {
-	int i = 0, wc = 0;
+	int wc = 0;
 
 	while (*str != '\0')
 	{
