@@ -80,41 +80,43 @@ int is_digit(char c)
  * @len_r: length of result arrays
  * Return: 0 fail, 1 success
  */
+
 int *multiply(char *num1, int len_1, char *num2, int len_2, int len_r)
 {
-	int i = 0, i1 = len_1 - 1;
-	int i2, product, carry, digit, *mul_result, *sum_result;
+	int *sum_result = _calloc(len_r, sizeof(int));
+	int i1, i2, product, carry, digit;
 
-	sum_result = _calloc(sizeof(int), (len_r));
-	while (i < len_1)
+	for (i1 = len_1 - 1; i1 >= 0; i1--)
 	{
-		mul_result = _calloc(sizeof(int), len_r);
-		i2 = len_2 - 1, digit = (len_r - 1 - i);
+		carry = 0;
+		digit = len_r - 1 - (len_1 - 1 - i1);
 		if (!is_digit(num1[i1]))
 		{
-			free(mul_result);
+			free(sum_result);
 			return (NULL);
 		}
-		carry = 0;
-		while (i2 >= 0)
+		for (i2 = len_2 - 1; i2 >= 0; i2--)
 		{
 			if (!is_digit(num2[i2]))
 			{
-				free(mul_result);
+				free(sum_result);
 				return (NULL);
 			}
-			product = (num1[i1] - '0') * (num2[i2] - '0');
-			product += carry;
-			mul_result[digit] += product % 10;
+			product = (num1[i1] - '0') * (num2[i2] - '0') + carry;
+			sum_result[digit] += product % 10;
 			carry = product / 10;
-			digit--, i2--;
+			digit--;
 		}
-		add_arrays(mul_result, sum_result, len_r);
-		free(mul_result);
-	    i++, i1--;
+		while (carry)
+		{
+			sum_result[digit] += carry % 10;
+			carry /= 10;
+			digit--;
+		}
 	}
 	return (sum_result);
 }
+
 /**
  * print_me - prints my array of the hopeful product here
  * @sum_result: pointer to int array with numbers to add
