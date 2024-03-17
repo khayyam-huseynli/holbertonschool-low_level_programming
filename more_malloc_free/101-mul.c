@@ -120,10 +120,10 @@ void print_me(int *sum_result, int len_r)
 	while (sum_result[i] == 0 && i < len_r)
 		i++;
 	if (i == len_r)
-		_putchar('0');
+		putchar('0');
 	while (i < len_r)
-		_putchar(sum_result[i++] + '0');
-	_putchar('\n');
+		putchar(sum_result[i++] + '0');
+	putchar('\n');
 }
 /**
  * main - multiply 2 input #'s of large lengths and print result or print Error
