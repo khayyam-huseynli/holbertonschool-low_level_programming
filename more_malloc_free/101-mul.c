@@ -40,9 +40,13 @@ int _strlen(char *s)
 
 /**
  * errors - handles errors for main
+ * @result: reult of multiplication
  */
-void errors(void)
+void errors(int *result)
 {
+	if (result != NULL)
+		free(result);
+
 	printf("Error\n");
 	exit(98);
 }
@@ -61,7 +65,7 @@ int main(int argc, char *argv[])
 
 	s1 = argv[1], s2 = argv[2];
 	if (argc != 3 || !is_digit(s1) || !is_digit(s2))
-		errors();
+		errors(result);
 	len1 = _strlen(s1);
 	len2 = _strlen(s2);
 	len = len1 + len2 + 1;
