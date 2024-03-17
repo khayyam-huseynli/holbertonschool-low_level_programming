@@ -15,9 +15,6 @@ int word_count(char *str)
 {
 	int i = 0, wc = 0;
 
-	while (str[i] != '\0')
-		i++;
-
 	while (*str != '\0')
 	{
 		if (*str != ' ')
@@ -29,6 +26,8 @@ int word_count(char *str)
 
 		wc++;
 		}
+		if(*str == '\0')
+			return (wc);
 		str++;
 	}
 	return (wc);
