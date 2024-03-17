@@ -1,116 +1,112 @@
-#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
-/**
- * _isdigit - checks if character is digit
- * @c: the character to check
- *
- * Return: 1 if digit, 0 otherwise
- */
-int _isdigit(int c)
-{
-	return (c >= '0' && c <= '9');
+/* Function prototypes */
+int is_digit(char c);
+int str_len(char *s);
+void print_error_and_exit(char *result);
+char *multiply_large_numbers(char *num1, char *num2);
+
+/* Function to check if a character is a digit */
+int is_digit(char c) {
+    return c >= '0' && c <= '9';
 }
 
-/**
- * _strlen - returns the length of a string
- * @s: the string whose length to check
- *
- * Return: integer length of string
- */
-int _strlen(char *s)
-{
-	int i = 0;
-
-	while (*s++)
-		i++;
-	return (i);
+/* Function to calculate the length of a string */
+int str_len(char *s) {
+    int length = 0;
+    while (s[length] != '\0') {
+        length++;
+    }
+    return length;
 }
 
-/**
- * big_multiply - multiply two big number strings
- * @s1: the first big number string
- * @s2: the second big number string
- *
- * Return: the product big number string
- */
-char *big_multiply(char *s1, char *s2)
-{
-	char *r;
-	int l1, l2, a, b, c, x;
-
-	l1 = _strlen(s1);
-	l2 = _strlen(s2);
-	r = malloc(a = x = l1 + l2);
-	if (!r)
-	{
-		free(r);
-		printf("Error\n"), exit(98);
-	}
-	while (a--)
-		r[a] = 0;
-	for (l1--; l1 >= 0; l1--)
-	{
-		if (!_isdigit(s1[l1]))
-		{
-			free(r);
-			printf("Error\n"), exit(98);
-		}
-		a = s1[l1] - '0';
-		c = 0;
-		for (l2 = _strlen(s2) - 1; l2 >= 0; l2--)
-		{
-			if (!_isdigit(s2[l2]))
-			{
-				free(r);
-				printf("Error\n"), exit(98);
-			}
-			b = s2[l2] - '0';
-			c += r[l1 + l2 + 1] + (a * b);
-			r[l1 + l2 + 1] = c % 10;
-			c /= 10;
-		}
-		if (c)
-			r[l1 + l2 + 1] += c;
-	}
-	return (r);
+/* Function to print an error message and exit */
+void print_error_and_exit(char *result) {
+    if (result != NULL) {
+        free(result);
+    }
+    printf("Error\n");
+    exit(98);
 }
 
+/* Function to multiply two large numbers */
+char *multiply_large_numbers(char *num1, char *num2) {
+    int len1, len2, i, j, carry, sum, start, new_length;
+    char *result;
 
-/**
- * main - multiply two big number strings
- * @argc: the number of arguments
- * @argv: the argument vector
- *
- * Return: Always 0 on success.
- */
-int main(int argc, char **argv)
-{
-	char *r = NULL;
-	int a, c, x;
+    len1 = str_len(num1);
+    len2 = str_len(num2);
+    result = malloc(len1 + len2);
+    if (result == NULL) {
+        print_error_and_exit(result);
+    }
 
-	if (argc != 3)
-	{
-		free(r);
-		printf("Error\n"), exit(98);
-	}
-	x = _strlen(argv[1]) + _strlen(argv[2]);
-	r = big_multiply(argv[1], argv[2]);
-	c = 0;
-	a = 0;
-	while (c < x)
-	{
-		if (r[c])
-			a = 1;
-		if (a)
-			putchar(r[c] + '0');
-		c++;
-	}
-	if (!a)
-		putchar('0');
-	putchar('\n');
-	free(r);
-	return (0);
+    for (i = 0; i < len1 + len2; i++) {
+        result[i] = 0;
+    }
+
+    for (i = len1 - 1; i >= 0; i--) {
+        if (!is_digit(num1[i])) {
+            print_error_and_exit(result);
+        }
+        carry = 0;
+        for (j = len2 - 1; j >= 0; j--) {
+            if (!is_digit(num2[j])) {
+                print_error_and_exit(result);
+            }
+            sum = (num1[i] - '0') * (num2[j] - '0') + result[i + j + 1] + carry;
+            carry = sum / 10;
+            result[i + j + 1] = sum % 10;
+        }
+        if (carry > 0) {
+            result[i + len2] += carry;
+        }
+    }
+
+    start = 0;
+    while (start < len1 + len2 - 1 && result[start] == 0) {
+        start++;
+    }
+
+    if (start != 0) {
+        new_length = len1 + len2 - start;
+        for (i = 0; i < new_length; i++) {
+            result[i] = result[i + start];
+        }
+        for (; i < len1 + len2; i++) {
+            result[i] = 0;
+        }
+    }
+
+    return result;
 }
+
+/* Main function */
+int main(int argc, char *argv[]) {
+    char *result;
+    int result_length, start, i;
+
+    if (argc != 3) {
+        print_error_and_exit(NULL);
+    }
+
+    result = multiply_large_numbers(argv[1], argv[2]);
+    if (result == NULL) {
+        print_error_and_exit(NULL);
+    }
+
+    result_length = str_len(argv[1]) + str_len(argv[2]);
+    start = 0;
+    while (start < result_length - 1 && result[start] == 0) {
+        start++;
+    }
+    for (i = start; i < result_length; i++) {
+        printf("%d", result[i]);
+    }
+    printf("\n");
+
+    free(result);
+    return 0;
+}
+
