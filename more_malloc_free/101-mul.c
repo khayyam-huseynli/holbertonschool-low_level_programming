@@ -88,12 +88,14 @@ char *big_multiply(char *s1, char *s2)
  */
 int main(int argc, char **argv)
 {
-	char *r;
+	char *r = NULL;
 	int a, c, x;
 
 	if (argc != 3)
+	{
+		free(r);
 		printf("Error\n"), exit(98);
-
+	}
 	x = _strlen(argv[1]) + _strlen(argv[2]);
 	r = big_multiply(argv[1], argv[2]);
 	c = 0;
@@ -108,7 +110,7 @@ int main(int argc, char **argv)
 	}
 	if (!a)
 		putchar('0');
-	putchar('\n');
+	//putchar('\n');
 	free(r);
 	return (0);
 }
