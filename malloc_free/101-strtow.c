@@ -26,7 +26,7 @@ int word_count(char *str)
 
 		wc++;
 		}
-		if(*str == '\0')
+		if (*str == '\0')
 			return (wc);
 		str++;
 	}
