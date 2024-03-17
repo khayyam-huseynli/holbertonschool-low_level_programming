@@ -158,5 +158,6 @@ int main(int argc, char **argv)
 	if (sum_result == NULL)
 		exit(98);
 	print_me(sum_result, len_r);
+	free(sum_result);
 	return (0);
 }
