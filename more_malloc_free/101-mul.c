@@ -32,7 +32,10 @@ void *_calloc(unsigned int bytes, unsigned int size)
 		return (NULL);
 	p = malloc(size * bytes);
 	if (p == NULL)
+	{
+		free(p);
 		return (NULL);
+	}
 	for (i = 0; i < bytes * size; i++)
 		p[i] = 0;
 	return ((void *)p);
@@ -124,6 +127,7 @@ void print_me(int *sum_result, int len_r)
 	while (i < len_r)
 		putchar(sum_result[i++] + '0');
 	putchar('\n');
+	free(sum_result);
 }
 /**
  * main - multiply 2 input #'s of large lengths and print result or print Error
