@@ -1,4 +1,6 @@
-#include "bootcamp.h"
+#include "main.h"
+#include <stdlib.h>
+#include <stdio.h>
 #include <limits.h>
 /**
  * str_len - finds string length
