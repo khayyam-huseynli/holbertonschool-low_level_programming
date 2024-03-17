@@ -110,7 +110,7 @@ int main(int argc, char **argv)
 	}
 	if (!a)
 		putchar('0');
-	//putchar('\n');
+	/**putchar('\n');*/
 	free(r);
 	return (0);
 }
