@@ -1,18 +1,19 @@
 section .data
-msg: DB "Hello World", 10
-msgSize EQU $ - msg
-
-global main
+    hello db 'Hello, World', 0xA ; 'Hello, World' followed by a newline character
 
 section .text
+    global main
 
-    start:
-    mov rax, 0x2000004          ; function 4
-    mov rbx, 1          ; stdout
-    mov rcx, msg        ; msg
-    mov rdx, msgSize    ; size
-    int 0x80
-    mov rax, 1          ; function 1
-    mov rbx, 0          ; code
-    int 0x80
-    ret
+main:
+    ; Write the string to stdout
+    mov rax, 1              ; The system call for sys_write
+    mov rdi, 1              ; File descriptor 1 is stdout
+    mov rsi, hello          ; Address of the string to output
+    mov rdx, 13             ; The number of bytes to write
+    syscall                 ; Invoke the kernel
+
+    ; Exit the program
+    mov rax, 60             ; The system call for sys_exit
+    xor rdi, rdi            ; Return a code of 0
+    syscall                 ; Invoke the kernel
+
