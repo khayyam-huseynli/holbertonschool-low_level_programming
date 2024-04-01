@@ -28,7 +28,7 @@ list_t *add_node(list_t **head, const char *str)
  * Return: returns size of given string
  */
 
-int _strlen(char *s)
+int _strlen(const char *s)
 {
 	int i;
 	int count = 0;
