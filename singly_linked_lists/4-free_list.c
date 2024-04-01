@@ -7,7 +7,7 @@
 
 void free_list(list_t *head)
 {
-	const list_t *p = head;
+	list_t *p = head;
 
 	while (p != NULL)
 	{
