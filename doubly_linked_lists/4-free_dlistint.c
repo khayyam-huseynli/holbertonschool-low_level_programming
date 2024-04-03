@@ -1,13 +1,13 @@
 #include "lists.h"
 
 /**
- * free_list - frees a list_t list
- * @head: head pointer to list_t list
+ * free_dlistint - frees a dlistint_t list
+ * @head: head pointer to dlistint_t list
  */
 
-void free_list(list_t *head)
+void free_dlistint(dlistint_t *head)
 {
-	list_t *tmp;
+	dlistint_t *tmp;
 
 	while (head != NULL)
 	{
