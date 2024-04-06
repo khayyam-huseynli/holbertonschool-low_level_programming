@@ -71,7 +71,7 @@ void print_magic(unsigned char *e_ident)
 
 void print_class(unsigned char *e_ident)
 {
-	printf("  Class                             ");
+	printf("  Class:                             ");
 
 	switch (e_ident[EI_CLASS])
 	{
@@ -96,7 +96,7 @@ void print_class(unsigned char *e_ident)
 
 void print_data(unsigned char *e_ident)
 {
-	printf("  Data                              ");
+	printf("  Data:                              ");
 
 	switch (e_ident[EI_DATA])
 	{
