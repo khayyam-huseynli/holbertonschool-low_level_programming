@@ -9,7 +9,8 @@
 #define XOR_VALUE_4 0xe5
 
 /**
- * calculate_product - calculates the product of the ASCII values of the characters in the input string.
+ * calculate_product - calculates the product of the ASCII values of
+ *                     the characters in the input string.
  * @str: pointer to first input argument.
  * @len: length of the string
  *
@@ -28,7 +29,8 @@ unsigned long calculate_product(char *str, int len)
 }
 
 /**
- * calculate_max - finds the maximum ASCII value among the characters in the input string.
+ * calculate_max - finds the maximum ASCII value among the characters in
+ *                 the input string.
  * @str: pointer to first input argument.
  * @len: length of the string
  *
@@ -51,7 +53,8 @@ unsigned long calculate_max(char *str, int len)
 }
 
 /**
- * calculate_sum - calculates the sum of the squares of the ASCII values of the characters in the input string.
+ * calculate_sum - calculates the sum of the squares of the ASCII values
+ *                 of the characters in the input string.
  * @str: pointer to first input argument.
  * @len: length of the string
  *
@@ -66,7 +69,8 @@ unsigned long calculate_sum(char *str, int len)
 	{
 		sum += str[i] * str[i];
 	}
-	return ((unsigned long)((unsigned int)(char)((char)sum ^ XOR_VALUE_3) & AND_VALUE));
+	return ((unsigned long)((unsigned int)(char)((char)sum ^ XOR_VALUE_3) &
+			AND_VALUE));
 }
 
 /**
@@ -84,7 +88,8 @@ unsigned long generate_random(char ch)
 	{
 		random_value = rand();
 	}
-	return ((unsigned long)((unsigned int)(char)((char)random_value ^ XOR_VALUE_4) & AND_VALUE));
+	return ((unsigned long)((unsigned int)(char)((char)random_value ^
+			XOR_VALUE_4) &	AND_VALUE));
 }
 
 /**
